@@ -840,7 +840,7 @@
         setData(airTempHumidityData.datasets[1].data, data.airHumid);
         airHumidityInfo.innerHTML = data.airHumid;
       }
-      if (data.mq2 != 0 || data.mq2 == "inf") {
+      if (data.mq2 > 0.0 || !isFinite(data.mq2) || isNumber(data.mq2)) {
         setData(SO2Data.datasets[0].data, data.mq2);
         SO2Info.innerHTML = data.mq2;
       } else {
