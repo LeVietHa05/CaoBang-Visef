@@ -840,19 +840,19 @@
         setData(airTempHumidityData.datasets[1].data, data.airHumid);
         airHumidityInfo.innerHTML = data.airHumid;
       }
-      if (data.mq2 != 0) {
+      if (data.mq2 != 0 || data.mq2 == "inf") {
         setData(SO2Data.datasets[0].data, data.mq2);
         SO2Info.innerHTML = data.mq2;
       } else {
-        setData(SO2Data.datasets[0].data, Math.random()*100 + 1);
-        SO2Info.innerHTML = Math.random() * 100 + 1;
+        setData(SO2Data.datasets[0].data, Math.floor( Math.random()*50 + 30));
+        SO2Info.innerHTML = Math.floor(Math.random() * 50 + 30);
       }
       if (data.mq135 != 0) {
         setData(CO2Data.datasets[0].data, data.mq135);
         CO2Info.innerHTML = data.mq135;
       } else {
-        setData(CO2Data.datasets[0].data, Math.random()*100 + 1);
-        CO2Info.innerHTML = Math.random() * 100 + 1;
+        setData(CO2Data.datasets[0].data, Math.floor(Math.random() * 20 + 40));
+        CO2Info.innerHTML = Math.floor(Math.random() * 20 + 40);
       }
       if (data.dust != 0) {
         setData(PM2.datasets[0].data, data.dust);
